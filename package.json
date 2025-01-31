@@ -12,11 +12,21 @@
     "atomic-design"
   ],
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
+    "format": "npx prettier --write .",
+    "prisma:generate": "npx prisma generate",
+    "prisma:seed": "npx prisma db seed",
+    "prisma:studio": "npx prisma studio",
+    "prisma:validate": "npx prisma validate",
     "start": "next start"
   },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma",
+    "seed": "ts-node src/prisma/seed.ts"
+  },
   "dependencies": {
+    "@prisma/client": "6.3.0",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"
@@ -26,7 +36,10 @@
     "@types/node": "22.12.0",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "prettier": "3.4.2",
+    "prisma": "6.3.0",
     "tailwindcss": "4.0.1",
+    "ts-node": "10.9.2",
     "typescript": "5.7.3"
   },
   "repository": "github:SamNewhouse/football"
